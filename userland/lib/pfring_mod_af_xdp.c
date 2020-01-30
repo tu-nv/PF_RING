@@ -699,9 +699,6 @@ static int eth_rx_queue_setup(struct af_xdp_handle *handle, u_int16_t queue_id, 
   struct tx_queue *txq;
   int ret;
 
-  /* Cleanup XDP in case we didn't shutdown gracefully.. */
-  remove_xdp_program(handle);
-
   rxq = &handle->rx_queues[queue_id];
   txq = &handle->tx_queues[queue_id];
 
